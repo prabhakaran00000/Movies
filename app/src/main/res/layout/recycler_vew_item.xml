@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.diagnal.movies.helper.AppUtils"/>
+        <variable
+            name="content"
+            type="com.diagnal.movies.data.model.Content" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimens_6dp"
+        android:background="@color/colorPrimary"
+        android:layout_marginBottom="@dimen/dimens_24dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_content"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimens_image"
+            android:scaleType="fitXY"
+            app:contentImage="@{content.posterImage}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_10dp"
+            android:gravity="left"
+            android:singleLine="true"
+            android:text="@{content.name}"
+            android:textColor="@color/textColor"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_content" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
